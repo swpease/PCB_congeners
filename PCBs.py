@@ -85,11 +85,13 @@ for congener in unfiltered_congeners:
             and 1 in congener:
                 all_congeners.append(congener)
 
+# To minimize the numbering per IUPAC standards.
 for i, c in enumerate(all_congeners):
     congener = max(c, x_flip(c), y_flip(c), xy_flip(c), half_flip(c),
                x_flip(half_flip(c)), y_flip(half_flip(c)), xy_flip(half_flip(c)))
     all_congeners[i] = congener
 
+# To get your output
 num_cl_of_interest = [2, 8]  # Edit this list to get congeners with different numbers of Cl's
 congeners_output = []
 
